@@ -1,12 +1,11 @@
 exports.seed = function(knex, Promise) {
 
-  return knex.raw()
+  return knex.raw('DELETE FROM "shoe"; ALTER SEQUENCE shoe_id_seq RESTART WITH 1')
     .then(function () {
 
       const shoeSeed = [
 
          {
-          id: 1 ,
           style: 'Boots',
           color: 'black',
           brand: 'Steve Madden',
@@ -14,7 +13,7 @@ exports.seed = function(knex, Promise) {
         },
 
         {
-         id: 2 ,
+
          style: 'Sneakers',
          color: 'grey',
          brand: 'Vans',
